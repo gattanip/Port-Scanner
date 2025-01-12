@@ -1,0 +1,110 @@
+# Basic Port Scanner
+
+## Overview
+The Basic Port Scanner is a Python tool designed to scan a target IP address or hostname for open ports and identify running services. It provides both basic functionality using the `socket` library and advanced capabilities using the `nmap` library.
+
+## Features
+- **Port Scanning**: Scan common ports or a specified range.
+- **Service Identification**: Detect services (e.g., HTTP, SSH) running on open ports.
+- **Output Results**: Optionally save scan results to a CSV file.
+- **Nmap Integration**: Perform advanced scans with detailed results using `nmap`.
+
+## Technologies Used
+- **Language**: Python
+- **Libraries**:
+  - `socket`
+  - `nmap` or `python-nmap`
+
+## Prerequisites
+Before using the tool, ensure you have Python installed on your system. Additionally, install the required libraries:
+
+```bash
+pip install python-nmap
+```
+
+If you use the Nmap feature, ensure Nmap is installed on your system. You can download it from [Nmap Official Site](https://nmap.org/download.html).
+
+## Installation
+1. Clone the repository:
+    
+    Clone the repository using the link
+
+2. Install dependencies:
+   ```bash
+   pip install python-nmap
+   ```
+
+## Usage
+### Basic Port Scanning
+Scan ports on a target host within a specified range:
+
+```bash
+python basic_port_scanner.py <host> --range <start-end>
+```
+Example:
+```bash
+python basic_port_scanner.py 192.168.1.1 --range 1-1024
+```
+
+### Save Results to a File
+Save the scanning results to a CSV file:
+
+```bash
+python basic_port_scanner.py <host> --range <start-end> --output <filename>
+```
+Example:
+```bash
+python basic_port_scanner.py 192.168.1.1 --range 1-1024 --output results.csv
+```
+
+### Advanced Nmap Scan
+Perform an advanced scan using Nmap:
+
+```bash
+python basic_port_scanner.py <host> --nmap
+```
+Example:
+```bash
+python basic_port_scanner.py 192.168.1.1 --nmap
+```
+
+## Output
+- **Console Output**: Displays open ports and associated services.
+- **CSV File**: Saves results in a CSV format with columns for Port, Status, and Service.
+
+## Example Output
+### Console Output
+```
+Scanning 192.168.1.1 for open ports in range 1-1024...
+Port 22: Open (ssh)
+Port 80: Open (http)
+Port 443: Open (https)
+```
+
+### CSV File
+```
+Port,Status,Service
+22,Open,ssh
+80,Open,http
+443,Open,https
+```
+
+## Learning Outcomes
+- Gain familiarity with networking and TCP/IP protocols.
+- Understand the significance of open ports and their potential vulnerabilities.
+- Learn to use Python libraries like `socket` and `python-nmap` for network-related tasks.
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Contributing
+Contributions are welcome! If you'd like to improve this tool, feel free to fork the repository and submit a pull request.
+
+## Acknowledgments
+- The `nmap` team for providing a powerful network scanning tool.
+- Python community for excellent libraries like `socket` and `python-nmap`.
+
+---
+
+Feel free to reach out with questions or suggestions!
+
